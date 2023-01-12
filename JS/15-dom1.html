@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Hello World</h1>
+
+    <p class = "desc"> 
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Sed non <b> asperiores </b>  modi vel? Doloremque,
+        dolore facere molestiae perspiciatis veritatis commodi! 
+        Soluta ratione eos tempore? Asperiores ducimus quae facere doloremque!
+    </p>
+
+    <ul class = "menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    <script>
+
+        const elH1 = document.querySelector("h1");
+        console.log(elH1.innerText);  // h1 buyuk bir obje icinden bize yaziyi vermesini istedik
+
+        elH1.innerText = "Hello <em>JavaScript</em>"; // innerText <em> tagını text olarak algilar ve yazdirir
+       // elH1.innerHTML =  "Hello <em>JavaScript</em>";  // innerHTML ise <em> tagi icine aldigi yaziyi italik yazdirir
+
+
+        // innerText Bir elementin icindeki yaziyi okumak veya degistirmek icin kullanilir
+
+        const allLi = document.querySelectorAll(".menu li"); // menunun altindaki li leri verir
+        console.log(allLi);
+
+
+        // innerHTML Bir elementin icindeki HTML'i okumak veya degistirmek icin kullanilir
+
+        const elHome = document.querySelector(".menu li:first-child"); // menu nun icindeki li lerden ilk child i verir
+        console.log(elHome); // Home yazar
+
+        elHome.innerText = "Ana Sayfa"; // Home yerine Ana Sayfa yazdirdik 
+
+        const elDesc = document.querySelector(".desc"); // class ismi desc olan text i ver
+        console.log(elDesc.innerText); // yukardaki paragrafi direk getirecek
+        console.log(elDesc.innerHTML); // paragrafin icindeki <b> tagini da getirecek
+
+
+        /*
+         Bir Web sayfasindaki diger tum nesnelerin sahibi olan ana nesneye document object denir.
+         Document nesnesi web sayfamizi temsil eder. Eger sayfa icindeki bir nesneye erismek istenilirse
+         DOCUMENT nesnesi kullanilir.
+
+         dom bir sayfada incele ile baktigimiz yer
+         document in yorumlanmis hali dom
+
+         document.querySelector(selector);  selectorle eslesen ilk elemani secer css selectorleri kullanilir
+         document.querySelectorAll(selector); selectorle eslesen tum elemanlari secer ve bir dizi icinde tutar
+        */
+
+    </script>
+</body>
+</html>

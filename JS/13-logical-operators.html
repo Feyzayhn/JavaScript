@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+   let x = false;
+   let y = true;
+   let z = true;
+   let m = false;
+   let n = "false"; // bu string bir ifade oldugu icin true kabul eder
+   
+   const comparation1 = true && null;
+   console.log(comparation1);  // null
+
+   const comparation2 = y && z && 5;
+   console.log(comparation2);  // 5
+
+   const comparation3 = y && m && z && 5;
+   console.log(comparation3);  // false
+
+   const comparation4 = false && null;
+   console.log(comparation4);  // false
+
+   const comparation5 = z || 34;
+   console.log(comparation5);  // true
+
+   const comparation6 = true || null;
+   console.log(comparation6);  // true
+
+   const comparation7 = m || x || false || 34;
+   console.log(comparation7);  // 34
+
+   const comparation8 = n || 34;
+   console.log(comparation8);  //false
+
+   const comparation9 = n && 34;
+   console.log(comparation9);  // 34
+  
+
+/*
+    && (ve) false arar buldugu anda false doner hicbiri false degilse en sondaki degeri dondurur
+    || (veya) true arar buldugu anda true doner hicbiri true degilse en sondaki deger dondurulur
+*/
+
+
+
+    </script>
+</body>
+</html>
