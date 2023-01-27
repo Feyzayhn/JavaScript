@@ -20,8 +20,9 @@
       }
 
       .text-style {
-        color: green;
+        color: #efefef;
         text-shadow: 3px 3px 5px black;
+        padding: 2rem;
       }
     </style>
   </head>
@@ -42,11 +43,17 @@
        pEl.classList.add("text-style");
       /*add ile elemente bir class eklemek icin kullaniyoruz */
 
+      pEl.classList.remove("red");
+      pEl.classList.add("blue");
+      
       console.log(pE1.classList);
-      /*classList bir elementin sahip oldugu classlari bize getirir
+      /*
+        classList bir elementin sahip oldugu classlari bize getirir
         Burada bize red ve text-center olarak iki eleman getirecek 
         yanina [0]... gibi index yazarak istedigimiz elemani direk yazabiliriz 
       */
+      
+      
     </script>
   </body>
 </html>

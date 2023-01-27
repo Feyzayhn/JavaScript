@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+     
+
+    </style>
+  </head>
+  <body>
+      <input type="text" id="txtName" value="Ali Bey"/>  
+      <button onclick="sayHello()">Say Hello</button> 
+
+      <h3 id="lblMessage">...</h3>
+
+
+    <script>
+      const txtName = document.querySelector("#txtName"); // burada bir kutu objesi aliyoruz, kutunun adresini koyuyoruz  
+      const lblMessage = document.querySelector("#lblMessage"); 
+
+      txtName.value = "Samet Bey"; // bu kisimda txtName const yani sabit olmasina ragmen degistirdim cunku yukarida tXtName
+                                   // obje olarak olusturduk bu sebeple adres tanimliydi adres sabit oldu icindeki deger degisiyor
+
+      //lblMessage.innerText = `Merhaba ${txtName.value}`;
+      
+     
+
+      function sayHello(){
+        lblMessage.innerText = `Merhaba ${txtName.value}`;  // burada 16. satirdaki sayHello fonksiyonunu tanimladik
+      }                             // bu kisimda artik 22. satirda tanimlamis oldugumuz adesin icindeki degerleri aliyoruz
+      
+      /*
+       <button>Say Hello</button>   burada Say Hello adinda bir button olusturduk
+        onclick="sayHello()"    bunun ile butonu tiklanabilir hale getirdik  
+      */
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        :root{
+
+            --colorDark : rgb(39, 39, 39);
+            --colorLight:aqua;
+        }
+
+        button{
+             
+            background-color: var(--colorDark);
+            color: var(--colorLight);
+            
+
+        }
+       
+       body.dark{
+             background-color: rgb(39, 39, 39);
+             color: aqua;
+       }
+
+
+       body.dark button{
+
+             background-color: var(--colorLight);
+             color: var(--colorDark);
+       }
+
+    </style>
+
+</head>
+<body >
+    
+    <button onclick="setMode()" id = "btnMode">Dark</button>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ratione eos consequatur magni maiores unde praesentium quis, quos quia velit similique. Perspiciatis pariatur doloremque voluptate accusamus quod officiis optio exercitationem.</p>
+
+
+    <script>
+
+       let mode = "Light";        
+
+       function setMode(){
+
+        document.querySelector("#btnMode").innerHTML = mode; // bunun sayesinde butonun ismide Dark / Light diye degisecek
+           
+            if(mode==="Light"){  // mode light ise
+
+                 document.querySelector("body").classList.add("dark"); // body dark class'ini ekle
+                 mode = "Dark";  // ve mode'u dark yap
+
+            }else{
+
+                 document.querySelector("body").classList.remove("dark"); // degilse dark class'ini sil
+                 mode = "Light"; // mode light yap
+
+            }
+
+        
+        }
+
+    
+/*
+ :root{}  => bunun altinda renkleri tanimladik
+ button{} => burada ise tum butonlarin arka plan rengini ve yazi rengini tanimladik
+ body.dark{} => class ismi dark olan body'lerin arka plan rengini ve yazi renklerini ayarladik
+ body.dark button{} => class ismi dark olan bodylerin icindeki butonun arka plan rengini ve yazi rengini tanimladik
+
+ */
+     
+    </script>
+
+
+</body>
+</html>
+
