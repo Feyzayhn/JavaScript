@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="txtRate">
+    <button onclick="calculate()">Update</button>
+
+    <ul id="product-list">
+        <li>Notebook <span>1500</span>$</li>
+        <li>Monitor <span>500</span>$</li>
+        <li>Keyboard <span>10</span>$</li>
+        <li>Mause <span>5</span>$</li>
+        <li>Sound Car <span>150</span>$</li>
+    </ul>
+
+    <script>
+        function calculate(){
+            let rate = document.querySelector("#txtRate").value; // id si txtRate olan value degerini rate e atadik
+            //rate = rate * 1 ? rate : 0; // rate sayi ile carpilabilen bir rakamsa rate i degilse 0 yaz
+            rate = !isNaN(rate) ? rate : 0  ; // rate rakamsa rate in kendisini ver rakam degilse  0 ver
+
+            const list = document.querySelectorAll("#product-list li") // id ile tum li leri bir liste attik
+            //console.log(list.length); // bize kac li oldugunu veriyor eleman sayisi
+
+            for(let i = 1; i<=list.length; i++){
+
+                const elPrice =document.querySelector(`#product-list li:nth-child(${i}) span`); // ul nin icindeki i. li deki span nin icindeki degeri aldik  
+                let price = Number(elPrice.innerHTML); // aldigimiz degeri Number a cevirerek price a atadik
+                price = price + price * rate / 100; 
+                elPrice.innerHTML = price.toFixed(1); // toFixed virgulden sonra kac sayi gostermek istedigimizi belirledik
+
+            }
+
+           
+           // `${}` ticket icine elemanlari $ ile koyabiliyoruz ve dinamik hale getiriyoruz 
+        }
+
+        /* Soru : Bir ul listesinde urun isimleri ve fiyat bilgileri bulunmaktadir
+                  Textbox a girilen indirim orani kadar listeye indirim uygulayan programi yaziniz */
+    </script>
+</body>
+</html>
