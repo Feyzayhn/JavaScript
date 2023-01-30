@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="txtNumber">
+    <button onclick="calculate()">Calculate</button>
+
+    
+
+    <script>
+       function calculate(){
+        let num = document.querySelector("#txtNumber").value;
+        let total = 0; 
+        num = isNaN(num+1) ? 0 : num;  // num bir sayi degilse 0 sayi ise num degerini yazdir kontrolu yaptik
+        num = Math.abs(num); // sayiyi mutlak degere aldik negatif girildiginde de toplasin diye
+        // 5327
+
+        while(num>0){
+            const digit = num % 10 ;
+            total += digit;
+            num = Math.floor(num / 10); // Math.floor ondalikli kismi atiyor 532,7 buradaki 7 yi silecek
+        }
+        
+        alert(total);
+       }
+
+       /* 
+       Soru : Bir textbox tan alinan sayinin, sayi degerini hesaplayip sonucu yazan 
+              programi yaziniz
+              8291 = 8+2+9+1=20
+              */
+    </script>
+</body>
+</html>
